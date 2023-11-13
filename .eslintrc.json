@@ -1,0 +1,36 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": "./tsconfig.json" },
+  "ignorePatterns": ["*.config.js", "*.config.ts"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "sort-destructure-keys",
+    "simple-import-sort",
+    "import",
+    "unused-imports",
+    "import-access",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "sort-destructure-keys/sort-destructure-keys": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-default-export": "error",
+    "import/no-duplicates": "error",
+    "unused-imports/no-unused-imports": "error",
+    "import-access/jsdoc": "error"
+  },
+  "overrides": [
+    {
+      "files": ["App.tsx"],
+      "rules": { "import/no-default-export": "off" }
+    }
+  ]
+}
