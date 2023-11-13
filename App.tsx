@@ -1,5 +1,5 @@
-import { HomeScreen } from "@/screens/HomeScreen";
+import { EventListScreen } from "@/src/components/screens/EventListScreen";
 
 export default function App() {
-  return <HomeScreen text="Hello, World!" />;
+  return <EventListScreen />;
 }

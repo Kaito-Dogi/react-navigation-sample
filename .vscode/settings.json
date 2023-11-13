@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["dimen", "dimens"],
+  "cSpell.words": ["datetime", "dimen", "dimens", "Ionicons", "Pressable"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": [

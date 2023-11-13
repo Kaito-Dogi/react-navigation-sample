@@ -1,0 +1,1 @@
+export { EventInfoBoxes } from "./EventInfoBoxes";

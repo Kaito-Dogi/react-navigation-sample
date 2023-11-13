@@ -1,13 +1,11 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "@/styles/colors";
+import { dimens } from "@/src/styles/dimens";
 
 /** @package */
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.background,
-    alignItems: "center",
-    justifyContent: "center",
+    gap: dimens.xs,
   },
 });
