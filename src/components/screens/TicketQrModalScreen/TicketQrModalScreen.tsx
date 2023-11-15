@@ -20,7 +20,7 @@ export const TicketQrModalScreen: FC<Props> = ({ id }) => {
       <Text text="ようこそ！" size="xl" fontWeight="bold" textAlign="center" />
       <Image
         style={styles.image}
-        source={require("@/assets/expo-router-sample-qr.png")}
+        source={require("@/assets/react-navigation-sample-qr.png")}
       />
     </SafeAreaView>
   );

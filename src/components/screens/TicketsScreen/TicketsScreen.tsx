@@ -1,4 +1,3 @@
-import { Redirect, router } from "expo-router";
 import { FC, useCallback, useState } from "react";
 import { Image, SafeAreaView, View } from "react-native";
 
@@ -19,14 +18,9 @@ export const TicketsScreen: FC = () => {
   // TODO: 表示しているチケットの id を保持
   const [ticketId] = useState(event?.id);
 
-  const onClick = useCallback(() => {
-    router.push({
-      pathname: "/tickets/[id]",
-      params: { id: ticketId },
-    });
-  }, [router, ticketId]);
+  const onClick = useCallback(() => {}, [ticketId]);
 
-  if (!event) return <Redirect href="/[...unmatched]" />;
+  if (!event) return null;
 
   return (
     <SafeAreaView style={styles.container}>

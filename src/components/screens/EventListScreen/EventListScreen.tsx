@@ -1,4 +1,3 @@
-import { router } from "expo-router";
 import { FC, useCallback } from "react";
 import { FlatList, SafeAreaView } from "react-native";
 
@@ -13,12 +12,9 @@ import { styles } from "./EventListScreen.styles";
 
 /** @package */
 export const EventListScreen: FC = () => {
-  const onEventClick = useCallback(
-    (event: Event) => {
-      router.push(`/events/${event.id}`);
-    },
-    [router],
-  );
+  const onEventClick = useCallback((event: Event) => {
+    event;
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>

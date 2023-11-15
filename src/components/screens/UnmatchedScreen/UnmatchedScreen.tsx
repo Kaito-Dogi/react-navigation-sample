@@ -1,4 +1,3 @@
-import { router } from "expo-router";
 import { FC, useCallback } from "react";
 import { SafeAreaView, View } from "react-native";
 
@@ -9,9 +8,7 @@ import { styles } from "./UnmatchedScreen.styles";
 
 /** @package */
 export const UnmatchedScreen: FC = () => {
-  const onClick = useCallback(() => {
-    router.push("/events");
-  }, [router]);
+  const onClick = useCallback(() => {}, []);
 
   return (
     <SafeAreaView style={styles.container}>
