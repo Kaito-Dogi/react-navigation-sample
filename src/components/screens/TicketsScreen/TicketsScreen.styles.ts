@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
     flex: 1,
     gap: dimens.m,
     backgroundColor: colors.background,
-    padding: dimens.l,
-    paddingBottom: dimens.m,
+    marginHorizontal: dimens.l,
+    marginBottom: dimens.m,
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   ticket: {

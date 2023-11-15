@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: dimens.m,
-    paddingTop: dimens.m,
     backgroundColor: colors.background,
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
