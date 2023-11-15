@@ -1,5 +1,6 @@
+import { Redirect, router } from "expo-router";
 import { FC, useCallback, useState } from "react";
-import { Image, View } from "react-native";
+import { Image, SafeAreaView, View } from "react-native";
 
 import { EventInfoBoxes } from "@/src/components/models/event/EventInfoBoxes";
 import { Button } from "@/src/components/ui/Button";
@@ -18,13 +19,17 @@ export const TicketsScreen: FC = () => {
   // TODO: 表示しているチケットの id を保持
   const [ticketId] = useState(event?.id);
 
-  const onClick = useCallback(() => {}, [ticketId]);
+  const onClick = useCallback(() => {
+    router.push({
+      pathname: "/tickets/[id]",
+      params: { id: ticketId },
+    });
+  }, [router, ticketId]);
 
-  // TODO: 404ページにリダイレクトする
-  if (!event) return null;
+  if (!event) return <Redirect href="/[...unmatched]" />;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.ticket}>
         <Image source={{ uri: event.imageUrl }} style={styles.image} />
         <View style={styles.infoContainer}>
@@ -59,6 +64,6 @@ export const TicketsScreen: FC = () => {
         <View style={styles.indicator}></View>
         <View style={styles.indicator}></View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };

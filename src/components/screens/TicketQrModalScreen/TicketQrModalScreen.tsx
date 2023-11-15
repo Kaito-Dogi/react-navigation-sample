@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Image, View } from "react-native";
+import { Image, SafeAreaView } from "react-native";
 
 import { Text } from "@/src/components/ui/Text";
 import { Ticket } from "@/src/models/Ticket";
@@ -16,12 +16,12 @@ export const TicketQrModalScreen: FC<Props> = ({ id }) => {
   id;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text text="ようこそ！" size="xl" fontWeight="bold" textAlign="center" />
       <Image
         style={styles.image}
-        source={require("@/assets/react-navigation-sample-qr.png")}
+        source={require("@/assets/expo-router-sample-qr.png")}
       />
-    </View>
+    </SafeAreaView>
   );
 };

@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StatusBar, StyleSheet } from "react-native";
 
 import { colors } from "@/src/styles/colors";
 import { dimens } from "@/src/styles/dimens";
@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     gap: dimens.m,
     paddingTop: dimens.m,
     backgroundColor: colors.background,
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   button: {
     justifyContent: "center",

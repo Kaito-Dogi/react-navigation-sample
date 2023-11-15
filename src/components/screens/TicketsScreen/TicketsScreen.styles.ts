@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StatusBar, StyleSheet } from "react-native";
 
 import { colors } from "@/src/styles/colors";
 import { dimens } from "@/src/styles/dimens";
@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.background,
     padding: dimens.l,
     paddingBottom: dimens.m,
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   ticket: {
     flex: 1,

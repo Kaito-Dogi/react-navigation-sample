@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Image, ScrollView, View } from "react-native";
+import { Image, SafeAreaView, ScrollView, View } from "react-native";
 
 import { EventInfoBoxes } from "@/src/components/models/event/EventInfoBoxes";
 import { Button } from "@/src/components/ui/Button";
@@ -32,7 +32,7 @@ export const EventDetailScreen: FC<Props> = ({ id }) => {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.contentContainer}
@@ -67,6 +67,6 @@ export const EventDetailScreen: FC<Props> = ({ id }) => {
           />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
