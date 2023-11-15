@@ -1,3 +1,5 @@
+import { RouteProp } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 import { FC } from "react";
 import { Image, SafeAreaView, ScrollView, View } from "react-native";
 
@@ -6,16 +8,22 @@ import { Button } from "@/src/components/ui/Button";
 import { Divider } from "@/src/components/ui/Divider";
 import { Text } from "@/src/components/ui/Text";
 import { mockEvents } from "@/src/mocks/events";
-import { Event } from "@/src/models/Event";
+import { EventStackParamList } from "@/src/navigation";
 
 import { styles } from "./EventDetailScreen.styles";
 
 type Props = {
-  id: Event["id"];
+  navigation: StackNavigationProp<EventStackParamList, "EventDetail">;
+  route: RouteProp<EventStackParamList, "EventDetail">;
 };
 
 /** @package */
-export const EventDetailScreen: FC<Props> = ({ id }) => {
+export const EventDetailScreen: FC<Props> = ({ navigation, route }) => {
+  // 使用していないが呼び出しておく
+  navigation;
+
+  const id = route.params.id;
+
   const event = mockEvents.find((event) => event.id === id);
 
   if (!event) {

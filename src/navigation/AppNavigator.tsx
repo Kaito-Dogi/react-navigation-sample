@@ -3,6 +3,7 @@ import { FC } from "react";
 
 import { RootTab } from "./RootTab";
 
+/** @package */
 export const AppNavigator: FC = () => {
   return (
     <NavigationContainer>

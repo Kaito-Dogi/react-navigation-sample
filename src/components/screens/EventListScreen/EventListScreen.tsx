@@ -1,3 +1,5 @@
+import { RouteProp } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 import { FC, useCallback } from "react";
 import { FlatList, SafeAreaView } from "react-native";
 
@@ -6,15 +8,27 @@ import { Spacer } from "@/src/components/ui/Spacer";
 import { Text } from "@/src/components/ui/Text";
 import { mockEvents } from "@/src/mocks/events";
 import { Event } from "@/src/models/Event";
+import { EventStackParamList } from "@/src/navigation";
 import { dimens } from "@/src/styles/dimens";
 
 import { styles } from "./EventListScreen.styles";
 
+type Props = {
+  navigation: StackNavigationProp<EventStackParamList, "EventList">;
+  route: RouteProp<EventStackParamList, "EventList">;
+};
+
 /** @package */
-export const EventListScreen: FC = () => {
-  const onEventClick = useCallback((event: Event) => {
-    event;
-  }, []);
+export const EventListScreen: FC<Props> = ({ navigation, route }) => {
+  // 使用していないが呼び出しておく
+  route;
+
+  const onEventClick = useCallback(
+    (event: Event) => {
+      navigation.navigate("EventDetail", { id: event.id });
+    },
+    [navigation]
+  );
 
   return (
     <SafeAreaView style={styles.container}>

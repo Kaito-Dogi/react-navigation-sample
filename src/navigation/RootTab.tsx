@@ -2,9 +2,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FC } from "react";
 
 import { PeopleIcon, TicketIcon } from "../components/icons";
-import { EventListScreen } from "../components/screens/EventListScreen";
 import { TicketsScreen } from "../components/screens/TicketsScreen";
 import { colors } from "../styles/colors";
+import { EventStack } from ".";
 
 type RootTabParamList = {
   Event: undefined;
@@ -24,7 +24,7 @@ export const RootTab: FC = () => {
     >
       <Tab.Screen
         name="Event"
-        component={EventListScreen}
+        component={EventStack}
         options={{
           title: "イベント",
           tabBarIcon: ({ color, focused }) => (
