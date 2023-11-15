@@ -1,19 +1,23 @@
+import { RouteProp } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 import { FC } from "react";
 import { Image, SafeAreaView } from "react-native";
 
 import { Text } from "@/src/components/ui/Text";
-import { Ticket } from "@/src/models/Ticket";
+import { TicketStackParamList } from "@/src/navigation";
 
 import { styles } from "./TicketQrModalScreen.styles";
 
 type Props = {
-  id: Ticket["event"]["id"];
+  navigation: StackNavigationProp<TicketStackParamList, "TicketQrModal">;
+  route: RouteProp<TicketStackParamList, "TicketQrModal">;
 };
 
 /** @package */
-export const TicketQrModalScreen: FC<Props> = ({ id }) => {
+export const TicketQrModalScreen: FC<Props> = ({ navigation, route }) => {
   // FIXME: 現状は使用していないが、ESLint の警告を避けるため呼び出している
-  id;
+  navigation;
+  route;
 
   return (
     <SafeAreaView style={styles.container}>

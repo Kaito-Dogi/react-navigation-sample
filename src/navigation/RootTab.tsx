@@ -1,10 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { FC } from "react";
+import { setBackgroundColorAsync } from "expo-navigation-bar";
+import { FC, useEffect } from "react";
+import { Platform } from "react-native";
 
 import { PeopleIcon, TicketIcon } from "../components/icons";
-import { TicketsScreen } from "../components/screens/TicketsScreen";
 import { colors } from "../styles/colors";
-import { EventStack } from ".";
+import { EventStack, TicketStack } from ".";
 
 type RootTabParamList = {
   Event: undefined;
@@ -15,6 +16,16 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 
 /** @package */
 export const RootTab: FC = () => {
+  useEffect(() => {
+    /**
+     * Expo で Android の Native Navigation Bar を透過させることはできないので、
+     * Bottom Tabs と同じ色に設定している
+     * - https://github.com/expo/expo/issues/16036
+     * - https://docs.expo.dev/versions/latest/sdk/navigation-bar/#navigationbarsetbackgroundcolorasynccolor
+     */
+    Platform.OS === "android" && setBackgroundColorAsync(colors.surface);
+  }, [colors.surface]);
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -34,7 +45,7 @@ export const RootTab: FC = () => {
       />
       <Tab.Screen
         name="Ticket"
-        component={TicketsScreen}
+        component={TicketStack}
         options={{
           title: "チケット",
           tabBarIcon: ({ color, focused }) => (

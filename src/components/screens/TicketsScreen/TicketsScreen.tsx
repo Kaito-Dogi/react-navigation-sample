@@ -1,3 +1,5 @@
+import { RouteProp } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 import { FC, useCallback, useState } from "react";
 import { Image, SafeAreaView, View } from "react-native";
 
@@ -7,18 +9,29 @@ import { Divider } from "@/src/components/ui/Divider";
 import { Spacer } from "@/src/components/ui/Spacer";
 import { Text } from "@/src/components/ui/Text";
 import { mockEvents } from "@/src/mocks/events";
+import { TicketStackParamList } from "@/src/navigation";
 
 import { styles } from "./TicketsScreen.styles";
 
+type Props = {
+  navigation: StackNavigationProp<TicketStackParamList, "Tickets">;
+  route: RouteProp<TicketStackParamList, "Tickets">;
+};
+
 /** @package */
-export const TicketsScreen: FC = () => {
+export const TicketsScreen: FC<Props> = ({ navigation, route }) => {
+  // 使用していないが呼び出しておく
+  route;
+
   // TODO: 所持しているチケットを fetch する
   const event = mockEvents.find((event) => event.id === "5");
 
   // TODO: 表示しているチケットの id を保持
-  const [ticketId] = useState(event?.id);
+  const [ticketId] = useState(event?.id ?? "");
 
-  const onClick = useCallback(() => {}, [ticketId]);
+  const onClick = useCallback(() => {
+    navigation.navigate("TicketQrModal", { id: ticketId });
+  }, [ticketId]);
 
   if (!event) return null;
 
