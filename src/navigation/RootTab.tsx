@@ -6,7 +6,8 @@ import { Platform } from "react-native";
 import { PeopleIcon, TicketIcon } from "@/src/components/icons";
 import { colors } from "@/src/styles/colors";
 
-import { EventStack, TicketStack } from ".";
+import { EventStack } from "./EventStack";
+import { TicketStack } from "./TicketStack";
 
 type RootTabParamList = {
   Event: undefined;
