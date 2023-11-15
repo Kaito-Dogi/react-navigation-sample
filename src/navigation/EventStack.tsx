@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { EventDetailScreen } from "../components/screens/EventDetailScreen";
-import { EventListScreen } from "../components/screens/EventListScreen";
+import { EventDetailScreen } from "@/src/components/screens/EventDetailScreen";
+import { EventListScreen } from "@/src/components/screens/EventListScreen";
 
 /** @package */
 export type EventStackParamList = {

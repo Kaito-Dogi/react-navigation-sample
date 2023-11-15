@@ -3,8 +3,9 @@ import { setBackgroundColorAsync } from "expo-navigation-bar";
 import { FC, useEffect } from "react";
 import { Platform } from "react-native";
 
-import { PeopleIcon, TicketIcon } from "../components/icons";
-import { colors } from "../styles/colors";
+import { PeopleIcon, TicketIcon } from "@/src/components/icons";
+import { colors } from "@/src/styles/colors";
+
 import { EventStack, TicketStack } from ".";
 
 type RootTabParamList = {

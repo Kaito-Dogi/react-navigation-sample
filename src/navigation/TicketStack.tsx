@@ -1,8 +1,11 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {
+  createStackNavigator,
+  TransitionPresets,
+} from "@react-navigation/stack";
 
-import { TicketQrModalScreen } from "../components/screens/TicketQrModalScreen";
-import { TicketsScreen } from "../components/screens/TicketsScreen";
-import { colors } from "../styles/colors";
+import { TicketQrModalScreen } from "@/src/components/screens/TicketQrModalScreen";
+import { TicketsScreen } from "@/src/components/screens/TicketsScreen";
+import { colors } from "@/src/styles/colors";
 
 /** @package */
 export type TicketStackParamList = {
@@ -10,28 +13,34 @@ export type TicketStackParamList = {
   TicketQrModal: { id: string };
 };
 
-const Stack = createNativeStackNavigator<TicketStackParamList>();
+const JsStack = createStackNavigator<TicketStackParamList>();
 
 /** @package */
 export const TicketStack: React.FC = () => {
   return (
-    <Stack.Navigator
+    <JsStack.Navigator
       initialRouteName={"Tickets"}
       screenOptions={{ headerTintColor: colors.primary }}
     >
-      <Stack.Screen
+      <JsStack.Screen
         name={"Tickets"}
         component={TicketsScreen}
         options={{ headerShown: false, title: "チケット" }}
       />
-      <Stack.Screen
+      {/**
+       * モーダルは Android で動作しないため JS Stack Navigator で独自に実装する必要がある
+       * - https://reactnavigation.org/docs/stack-navigator
+       */}
+      <JsStack.Screen
         name={"TicketQrModal"}
         component={TicketQrModalScreen}
         options={{
+          ...TransitionPresets.ModalPresentationIOS,
           title: "QR コード",
+          headerBackTitle: "チケット",
           presentation: "modal",
         }}
       />
-    </Stack.Navigator>
+    </JsStack.Navigator>
   );
 };
