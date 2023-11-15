@@ -1,5 +1,5 @@
-import { EventListScreen } from "@/src/components/screens/EventListScreen";
+import { AppNavigator } from "./src/navigation/AppNavigator";
 
 export default function App() {
-  return <EventListScreen />;
+  return <AppNavigator />;
 }
