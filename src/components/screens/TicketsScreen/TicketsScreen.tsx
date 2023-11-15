@@ -24,39 +24,41 @@ export const TicketsScreen: FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.ticket}>
-        <Image source={{ uri: event.imageUrl }} style={styles.image} />
-        <View style={styles.infoContainer}>
-          <Text
-            text={event.name}
-            size="l"
-            fontWeight="bold"
-            numberOfLines={2}
-          />
-          <Divider />
-          <EventInfoBoxes
-            datetime={event.datetime}
-            location={event.location}
-            organizer={event.organizer}
-          />
-          <Spacer />
-          <View style={styles.circleContainer}>
-            <View style={[styles.circle, styles.startCircle]} />
-            <View style={[styles.circle, styles.endCircle]} />
+      <View style={styles.ticketContainer}>
+        <View style={styles.ticket}>
+          <Image source={{ uri: event.imageUrl }} style={styles.image} />
+          <View style={styles.infoContainer}>
+            <Text
+              text={event.name}
+              size="l"
+              fontWeight="bold"
+              numberOfLines={2}
+            />
             <Divider />
+            <EventInfoBoxes
+              datetime={event.datetime}
+              location={event.location}
+              organizer={event.organizer}
+            />
+            <Spacer />
+            <View style={styles.circleContainer}>
+              <View style={[styles.circle, styles.startCircle]} />
+              <View style={[styles.circle, styles.endCircle]} />
+              <Divider />
+            </View>
+            <Button text="QR コードを表示する" onClick={onClick} size="l" />
           </View>
-          <Button text="QR コードを表示する" onClick={onClick} size="l" />
         </View>
-      </View>
-      {/**
-       * TODO:
-       * - チケットの枚数分表示する
-       * - 表示しているチケット番目の indicator の色を primary にする
-       */}
-      <View style={styles.indicatorContainer}>
-        <View style={[styles.indicator, styles.isShown]}></View>
-        <View style={styles.indicator}></View>
-        <View style={styles.indicator}></View>
+        {/**
+         * TODO:
+         * - チケットの枚数分表示する
+         * - 表示しているチケット番目の indicator の色を primary にする
+         */}
+        <View style={styles.indicatorContainer}>
+          <View style={[styles.indicator, styles.isShown]}></View>
+          <View style={styles.indicator}></View>
+          <View style={styles.indicator}></View>
+        </View>
       </View>
     </SafeAreaView>
   );

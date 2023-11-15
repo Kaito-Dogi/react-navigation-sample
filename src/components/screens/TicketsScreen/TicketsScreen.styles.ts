@@ -10,11 +10,15 @@ const indicatorRadius = 3;
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.background,
+    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+  ticketContainer: {
+    flex: 1,
     gap: dimens.m,
     backgroundColor: colors.background,
-    marginHorizontal: dimens.l,
-    marginBottom: dimens.m,
-    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    padding: dimens.l,
+    paddingBottom: dimens.m,
   },
   ticket: {
     flex: 1,
