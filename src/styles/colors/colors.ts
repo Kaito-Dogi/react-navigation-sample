@@ -4,9 +4,9 @@ import { Color } from "./Color";
 export const colors: {
   [key in Color]: `#${string}`;
 } = {
-  primary: "#000020",
-  onPrimary: "#fff",
-  primaryContainer: "#e6e7ff",
+  primary: "#8C90E0",
+  onPrimary: "#222",
+  primaryContainer: "#ebecfa",
   background: "#f9f9f9",
   onBackground: "#222",
   surface: "#fff",
