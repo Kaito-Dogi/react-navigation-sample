@@ -3,7 +3,7 @@
 2023/11/18 開催のフロントエンドカンファレンス沖縄2023で発表したセッションのサンプルプロジェクトです。
 
 - [スライド](https://github.com/Kaito-Dogi/slides/tree/main/2023_11_18)
-- [Speaker Deck]()
+- [Speaker Deck](https://speakerdeck.com/kaito_dogi/expo-router-ha-expo-dao-ru-nojue-meshou-tonaruka-hurontoendokanhuarensuchong-nawa-2023-at-kaito-dogi)
 
 <img src="https://github.com/Kaito-Dogi/react-navigation-sample/assets/49048577/b594b16b-9daf-4273-996a-5cb7b49a9e37" width="300px" />
 <img src="https://github.com/Kaito-Dogi/react-navigation-sample/assets/49048577/59d94526-6302-4120-92de-7f9a3b959174" width="300px" />
